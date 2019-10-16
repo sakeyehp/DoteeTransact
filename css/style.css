@@ -1,0 +1,49 @@
+body {
+    padding-top: 30px;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #000000 !important;
+}
+
+.navbar-nav > li{
+    padding-left:30px;
+    padding-right:30px;
+    color: darkgreen;
+}
+
+.doteeImage {
+    padding-left: 50px;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 27px;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.divBorder {
+    border-style: solid;
+    border-color: darkgreen;
+    border-radius: 5px;
+    padding: 20px 20px 20px 20px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.padIcon {
+    padding-bottom: 10px;
+}
+
+
+.imgCenter {
+    text-align: center;
+    vertical-align: middle;
+    color: darkgreen;
+}
+
+.carousel {
+    padding-left: 50px;
+    padding-right: 50px;
+}
