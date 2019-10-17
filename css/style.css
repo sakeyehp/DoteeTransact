@@ -47,3 +47,31 @@ body {
     padding-left: 50px;
     padding-right: 50px;
 }
+
+.dashboardHeading {
+    background-color: darkgreen !important;
+}
+
+#jumbotron {
+    background: #56ab2f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#firstProgressBar {
+    background-color: darkgrey;
+    width: 80%;
+}
+
+#secondProgressBar {
+    background-color: darkgrey;
+    width: 57%;
+}
+
+#footer {
+    background: #ffffff;  /* fallback for old browsers */
+    height: 100px;
+    padding: 50px;
+    color: darkgreen;
+}
