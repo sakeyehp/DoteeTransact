@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agents</title>
+    <link rel='icon' href='./img/favicon.ico' type='image/x-icon'/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://use.fontawesome.com/releases/v5.0.3/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+    <span class="title">Dotee Transact</span>
+</div>
+
+<div id="jumbotron" class="jumbotron jumbotron-fluid">
+    <div class="container pad">
+        <h1 class="text-white float-right">Hi Admin <i class="fas fa-user-tie"></i></h1>
+        <br />
+        <br />
+    </div>
+    <div>
+        <a href="" class="padLeft text-white">Logout</a>
+    </div>
+</div>
+
+<br>
+
+<!-- Start Main Container -->
+<div id="main" class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="container text-white dashboardHeading">
+                    <ol class="breadcrumb bg-transparent">
+                        <li class="breadcrumb-item"><a href="admin.html">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="agents.html">Agents</a></li>
+                    </ol>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <div class="row container-fluid">
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="subscribers.html" class="blackText">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-home"></i></h3>
+                                            <h6>Subscribers</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="agents.html" class="text-success">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-user"></i></h3>
+                                            <h6>Agents</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="complaints.html" class="blackText">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-list"></i></h3>
+                                            <h6>Complaints</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="wasteLog.html" class="blackText">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-clipboard-list"></i></h3>
+                                            <h6>Waste Log</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="paymentLog.html" class="blackText">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-file-invoice-dollar"></i></h3>
+                                            <h6>Payment Log</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="statistics.html" class="blackText">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-chart-line"></i></h3>
+                                            <h6>Statistics</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="createSubscribersForm text-center">
+                <div class="form-group">
+                    <span class=""><h2>Make Payment</h2></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="amount" placeholder="Enter amount" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="assetCode" placeholder="Enter the asset code" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="phone" placeholder="Enter phone number" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success" id="submitPayment">Submit Payment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+            <form class="createSubscribersForm text-center">
+                <div class="form-group">
+                    <span class=""><h2>Create Account for an Agent</h2></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="phoneForAgent" placeholder="Enter phone number" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success" id="createForAgent">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="createSubscribersForm text-center">
+                <div class="form-group">
+                    <span class=""><h2>Get an Agent's Account</h2></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="phoneWithAccount" placeholder="Enter phone number" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success" id="getAccount">Get Account</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+            <form class="createSubscribersForm text-center">
+                <div class="form-group">
+                    <span class=""><h2>Update an Agent's Account</h2></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="phoneToUpdate" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="agentBalance" placeholder="Enter balance" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success" id="updateAgent">Update Balance</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="footer">
+    <div class="container">
+        <h6 class="display-5 text-center">&copy; Copyright 2019 - Dotee Transact</h6>
+    </div>
+</div>
+
+
+<script>
+    document.getElementById('submitPayment').addEventListener('click',submitPayment);
+
+    function submitPayment(e) {
+        e.preventDefault();
+
+        const details = {
+            "amount": document.getElementById('amount').value,
+            "assetCode": document.getElementById("assetCode").value,
+            "phone": document.getElementById('phone').value
+        };
+
+        fetch('http://walletapitrusoftng.eu-west-1.elasticbeanstalk.com/api/v1/wallet/postPayment', {
+            headers: {
+                'Content-type':'application/json'
+            },
+            method:'POST',
+            body:JSON.stringify( details )
+        })
+            .then(res => res.json())
+            .then(res =>  {
+                if(res.status === "success"){
+                    alert("Agent successfully added.");
+                } else{
+                    alert("Check the details you entered and try again.");
+                }
+            })
+            .catch(err => console.log('Error message:', err));
+    }
+
+    document.getElementById('createForAgent').addEventListener('click',createForAgent);
+
+    function createForAgent(e) {
+        e.preventDefault();
+
+        const details = {
+            "phone": document.getElementById('phoneForAgent').value
+        };
+
+        fetch('http://walletapitrusoftng.eu-west-1.elasticbeanstalk.com/api/v1/wallet/account/new', {
+            headers: {
+                'Content-type':'application/json'
+            },
+            method:'POST',
+            body:JSON.stringify( details )
+        })
+            .then(res => res.json())
+            .then(res =>  {
+                if(res.status === "success"){
+                    alert("Account successfully created for agent.");
+                } else{
+                    alert("Check the details you entered and try again.");
+                }
+            })
+            .catch(err => console.log('Error message:', err));
+    }
+
+    document.getElementById('getAccount').addEventListener('click', viewSubscriber);
+
+    function viewSubscriber(e) {
+        e.preventDefault();
+
+        const phoneWithAccount = document.getElementById('phoneWithAccount').value;
+
+        const url = 'http://walletapitrusoftng.eu-west-1.elasticbeanstalk.com/api/v1/wallet/account/' + phoneWithAccount;
+
+        // myUrl = updateUrl(url, code, '');
+
+        fetch(url, {
+            headers: {
+                'Content-type':'application/json'
+            },
+        })
+            .then(res => res.json())
+            .then(res =>  {
+                if(res.status === "success"){
+                    alert("Agent with the account exists.");
+                } else{
+                    alert("Check the details you entered and try again.");
+                }
+            })
+            .catch(err => console.log('Error message:', err));
+    }
+
+    document.getElementById('phoneToUpdate').addEventListener('click', updateAgent);
+
+    function updateAgent(e) {
+        e.preventDefault();
+
+        const details = {
+            "balance": document.getElementById('agentBalance').value
+        };
+
+        const phoneToUpdate = document.getElementById('phoneToUpdate').value;
+
+        const url = 'http://walletapitrusoftng.eu-west-1.elasticbeanstalk.com/api/v1/wallet/account/' + phoneToUpdate;
+
+        // myUrl = updateUrl(url, code, '');
+
+        fetch(url, {
+            headers: {
+                'Content-type':'application/json'
+            },
+            method:'POST',
+            body:JSON.stringify( details )
+        })
+            .then(res => res.json())
+            .then(res =>  {
+                if(res.status === "success"){
+                    alert("Balance successfully updated.");
+                } else{
+                    alert("Check the details you entered and try again.");
+                }
+            })
+            .catch(err => console.log('Error message:', err));
+    }
+
+</script>
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/75708661cf.js" crossorigin="anonymous"></script>
+</body>
+</html>

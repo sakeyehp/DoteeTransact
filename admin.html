@@ -8,33 +8,24 @@
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link href="https://use.fontawesome.com/releases/v5.0.3/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 </head>
 <body>
 
 
 <div class="container">
     <span class="title">Dotee Transact</span>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light float-right top bg-transparent">
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home </a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn" data-toggle="modal" data-target="#adminModal">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 </div>
 
 <div id="jumbotron" class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4 text-white"><i class="fas fa-user-tie"></i> Welcome Admin</h1>
+    <div class="container pad">
+        <h1 class="text-white float-right">Hi Admin <i class="fas fa-user-tie"></i></h1>
+        <br />
+        <br />
+    </div>
+    <div>
+        <a href="" class="padLeft text-white">Logout</a>
     </div>
 </div>
 
@@ -42,68 +33,76 @@
 
 <!-- Start Main Container -->
 <div id="main" class="container">
-
-    <!-- Breadcrumb -->
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Home</li>
-        </ol>
-    </nav>
-
     <div class="row">
-
-        <div class=col-3>
-
-            <ul class="list-group">
-                <li class="list-group-item active dashboardHeading">Manage</li>
-                <li class="list-group-item"><i class="fas fa-user"></i> Agents</li>
-                <li class="list-group-item"><i class="fas fa-home"></i> Subscribers Database</li>
-                <li class="list-group-item"><i class="fas fa-clipboard-list"></i> Evacuation Log</li>
-                <li class="list-group-item"><i class="fas fa-file-invoice-dollar"></i> Payment Log</li>
-                <li class="list-group-item"><i class="fas fa-chart-line"></i> Statistics</li>
-            </ul>
-
-            <br>
-
-        </div>
-        <div class="col-9">
+        <div class="col-12">
             <div class="card">
-            <div class="card-header text-white dashboardHeading">
-                Overview
+            <div class="container text-white dashboardHeading">
+                <ol class="breadcrumb bg-transparent">
+                    <li class="breadcrumb-item active">Home</li>
+                </ol>
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
-                    <div class="row">
-                        <div class="col-3">
+                    <div class="row container-fluid">
+                        <div class="col-2">
                             <div class="card text-center bg-light">
-                                <div class="card-body">
-                                    <h3 class="card-text"><i class="fas fa-home"></i> 203</h3>
-                                    <h5>Properties</h5>
-                                </div>
+                                <a href="subscribers.html" class="blackText">
+                                    <div class="card-body">
+                                        <h3 class="card-text"><i class="fas fa-home"></i></h3>
+                                        <h6>Subscribers</h6>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-2">
                             <div class="card text-center bg-light">
-                                <div class="card-body">
-                                    <h3 class="card-text"><i class="fas fa-user"></i> 300</h3>
-                                    <h5>Agents</h5>
-                                </div>
+                                <a href="agents.html" class="blackText">
+                                    <div class="card-body">
+                                        <h3 class="card-text"><i class="fas fa-user"></i></h3>
+                                        <h6>Agents</h6>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="col-3">
+
+                        <div class="col-2">
                             <div class="card text-center bg-light">
-                                <div class="card-body">
-                                    <h3 class="card-text"><i class="fas fa-file-invoice-dollar"></i> 251</h3>
-                                    <h5>Transactions</h5>
-                                </div>
+                                <a href="complaints.html" class="blackText">
+                                    <div class="card-body">
+                                        <h3 class="card-text"><i class="fas fa-list"></i></h3>
+                                        <h6>Complaints</h6>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="col-3">
+                        <div class="col-2">
                             <div class="card text-center bg-light">
-                                <div class="card-body">
-                                    <h3 class="card-text"><i class="fas fa-list"></i> 20</h3>
-                                    <h5>Complaints</h5>
-                                </div>
+                                <a href="wasteLog.html" class="blackText">
+                                    <div class="card-body">
+                                        <h3 class="card-text"><i class="fas fa-clipboard-list"></i></h3>
+                                        <h6>Waste Log</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="card text-center bg-light">
+                                <a href="paymentLog.html" class="blackText">
+                                    <div class="card-body">
+                                        <h3 class="card-text"><i class="fas fa-file-invoice-dollar"></i></h3>
+                                        <h6>Payment Log</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="card text-center bg-light">
+                                <a href="statistics.html" class="blackText">
+                                    <div class="card-body">
+                                        <h3 class="card-text"><i class="fas fa-chart-line"></i></h3>
+                                        <h6>Statistics</h6>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -113,42 +112,69 @@
         </div>
     </div>
 
+
+    <div class="row">
         <div class=col-12>
             <br>
             <div class="card">
                 <div class="card-header text-white dashboardHeading">
-                    Newly Registered Agents
+                    Statistics
                 </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Phone Number</th>
-                                <th scope="col">Location</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Agent 1</td>
-                                <td>012345678</td>
-                                <td>Alimosho</td>
-                            </tr>
-                            <tr>
-                                <td>Agent 2</td>
-                                <td>012345678</td>
-                                <td>Alimosho</td>
-                            </tr>
-                            <tr>
-                                <td>Agent 3</td>
-                                <td>012345678</td>
-                                <td>Alimosho</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </blockquote>
+                <div class="container col-md-9">
+                    <canvas id="myChart"></canvas>
                 </div>
+
+
+                <script>
+                    let myChart = document.getElementById('myChart').getContext('2d');
+                    // Global Options
+                    Chart.defaults.global.defaultFontFamily = 'sans-serif';
+                    Chart.defaults.global.defaultFontsize = 18;
+                    Chart.defaults.global.defaultFontColor = '#777';
+                    let PrPopChart = new Chart(myChart, {
+                        type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                        data:{
+                            labels:['Ayobo', 'Ipaja', 'Agege', 'IyanaIpaja', 'Abule-Egba', 'Fagba', 'Oko-Oba', 'Mosalasi', 'Ojo Oba', 'Ijaiye'],
+                            datasets:[{
+                                label:'Distribution of Properties',
+                                data:[
+                                    418140,
+                                    203499,
+                                    170404,
+                                    152634,
+                                    86804,
+                                    81360,
+                                    78647,
+                                    54189,
+                                    49318,
+                                    34068
+                                ],
+                                // backgroundColor: 'green',
+                                backgroundColor:[
+                                    '#e65100',
+                                    '#e65100',
+                                    '#f57c00',
+                                    '#fb8c00',
+                                    '#ff9800',
+                                    '#ffa726',
+                                    '#ffb74d',
+                                    '#ffcc80',
+                                    '#ffe0b2',
+                                    '#fff3e0'
+                                ],
+                                borderWidth:1,
+                                borderColor:'white',
+                                hoverBorderWidth: 3,
+                                hoverBorderColor: 'grey'
+                            }]
+                        },
+                        options:{
+                            tooltips:{
+                                enabled:true
+                            }
+                        }
+                    });
+                </script>
             </div>
 
         </div>
@@ -167,6 +193,8 @@
     </div>
 </div>
 
+
+<script src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js"></script>

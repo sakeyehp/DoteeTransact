@@ -20,9 +20,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home </a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="paymentHistory.html">Check Payment History</a>
                 </li>
@@ -76,7 +73,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body align-content-center">
-                <form class="divBorder" action="admin.html">
+                <form class="divBorder">
                     <img src="img/icon.jpeg" class="padIcon">
                     <div class="form-group">
                         <input type="email" class="form-control" id="adminEmail" placeholder="Username" required>
@@ -85,8 +82,8 @@
                         <input type="password" class="form-control" id="adminPassword" placeholder="Password" required>
                     </div>
                     <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="adminPassword2">
-                        <label class="form-check-label" for="adminPassword2">Remember me</label>
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
                     </div>
                     <p><div><a href="">Forgot Password</a></div></p>
                     <div>
@@ -99,6 +96,34 @@
     </div>
 </div>
 
+<script>
+
+
+        document.getElementById('adminLogin').addEventListener('click',loginAdmin);
+        function loginAdmin(e) {
+            e.preventDefault();
+
+            const details = {
+                "email": document.getElementById('adminEmail').value,
+                "password": document.getElementById('adminPassword').value
+            };
+
+            fetch('http://agentapitrusoftng-env.ybrqr3jrwz.eu-west-1.elasticbeanstalk.com/api/v1/agent/admin/login', {
+                headers: {'Content-type':'application/json' },
+                method:'POST',
+                body:JSON.stringify( details )
+            })
+                .then(res => res.json())
+                .then(res =>  {
+                    if(res.status === "success"){
+                        window.location.assign('./admin.html');
+                    } else{
+                        alert("Invalid Email or Password");
+                    }
+                })
+                .catch(err => console.log('Error message:', err));
+        }
+</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

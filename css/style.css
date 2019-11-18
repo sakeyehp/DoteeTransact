@@ -98,3 +98,49 @@ body {
 .padTop {
     padding-top: 10px;
 }
+
+.pad {
+    margin-bottom: 10px;
+}
+
+.breadcrumb-item {
+    font-size: large;
+    font-family: 'Nunito', sans-serif;
+}
+
+.padLeft {
+    padding-left: 1170px;
+}
+
+.blackText {
+    color: #000;
+}
+
+.breadcrumb > .active {
+    color: grey;
+    text-decoration: none;
+}
+
+.createAdminForm {
+    padding: 10px 400px 10px 400px;
+}
+
+.createSubscribersForm {
+    padding-left: 105px;
+}
+
+.msg {
+    padding: 1em;
+    margin: 1em 0;
+    background-color: #FFFDE3;
+    color: blue;
+    width: 70%;
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+}
+
+.central {
+    padding-left: 100px;
+    padding-right: 100px;
+    align-content: center;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dotee Transact</title>
+    <link rel='icon' href='./img/favicon.ico' type='image/x-icon'/ >
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div class="container">
+    <span class="title text-left">Dotee Transact</span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light float-right top bg-transparent">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+     
+		
+		<form class="createAdminForm text-center">
+				<div class="form-group">
+                    <span class=""><h2>Create Admin</h2></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="phone" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                    </div>
+					<div class="form-group">
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter full name" required>
+                    </div>
+					<div class="form-group">
+                        <input type="text" class="form-control" id="lga" placeholder="Enter L.G.A" required>
+                    </div>
+					<div class="form-group">
+                        <input type="text" class="form-control" id="lcda" placeholder="Enter L.C.D.A" required>
+                        <span></span>
+                    </div>
+					<div class="form-group">
+                        <input type="text" class="form-control" id="address" placeholder="Enter residential address" required>
+                    </div>
+					<div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                    </div>
+                    <div class="msg" id="message">
+
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success" id="submit">Create Admin</button>
+                    </div>
+				</div>
+		</form>
+<script>
+
+
+
+    document.getElementById('submit').addEventListener('click',createAdmin);
+
+    function createAdmin(e) {
+        e.preventDefault();
+        const details = {
+            "address": document.getElementById('address').value,
+            "phone": document.getElementById("phone").value,
+            "fullname": document.getElementById('fullName').value,
+            "lcda": document.getElementById('lcda').value,
+            "lga": document.getElementById('lga').value,
+            "password": document.getElementById('password').value,
+            "email": document.getElementById('email').value
+        };
+
+        fetch('http://agentapitrusoftng-env.ybrqr3jrwz.eu-west-1.elasticbeanstalk.com/api/v1/agent/register', {
+            headers: {
+                'Content-type':'application/json'
+            },
+            method:'POST',
+            body:JSON.stringify( details )
+        })
+            .then(res => res.json())
+            .then(res =>  {
+                if(res.status === "success"){
+                    alert("Admin successfully created.");
+                } else{
+                    alert("Check the details you entered and try again.");
+                }
+            })
+            .catch(err => console.log('Error message:', err));
+    }
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

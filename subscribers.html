@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Subscribers</title>
+    <link rel='icon' href='./img/favicon.ico' type='image/x-icon'/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://use.fontawesome.com/releases/v5.0.3/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+    <span class="title">Dotee Transact</span>
+</div>
+
+<div id="jumbotron" class="jumbotron jumbotron-fluid">
+    <div class="container pad">
+        <h1 class="text-white float-right">Hi Admin <i class="fas fa-user-tie"></i></h1>
+        <br />
+        <br />
+    </div>
+    <div>
+        <a href="" class="padLeft text-white">Logout</a>
+    </div>
+</div>
+
+<br>
+
+<!-- Start Main Container -->
+<div id="main" class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="container text-white dashboardHeading">
+                    <ol class="breadcrumb bg-transparent">
+                        <li class="breadcrumb-item"><a href="admin.html">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="subscribers.html">Subscribers</a></li>
+                    </ol>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <div class="row container-fluid">
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="subscribers.html" class="text-success">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-home"></i></h3>
+                                            <h6>Subscribers</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="agents.html" class="blackText">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-user"></i></h3>
+                                            <h6>Agents</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="complaints.html" class="blackText">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-list"></i></h3>
+                                            <h6>Complaints</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="wasteLog.html" class="blackText">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-clipboard-list"></i></h3>
+                                            <h6>Waste Log</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="paymentLog.html" class="blackText">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-file-invoice-dollar"></i></h3>
+                                            <h6>Payment Log</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card text-center bg-light">
+                                    <a href="statistics.html" class="blackText">
+                                        <div class="card-body">
+                                            <h3 class="card-text"><i class="fas fa-chart-line"></i></h3>
+                                            <h6>Statistics</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form class="createSubscribersForm text-center">
+                <div class="form-group">
+                    <span class=""><h2>Add Subscriber</h2></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="code" placeholder="Enter property code" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Enter the name assigned to property" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="phone" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="adderss" placeholder="Enter address of property" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="lcda" placeholder="Enter L.C.D.A" required>
+                        <span></span>
+                    </div><div class="form-group">
+                    <input type="text" class="form-control" id="tariff" placeholder="Enter amount due monthly" required>
+                    <span></span>
+                </div>
+                    <div>
+                        <button type="submit" class="btn btn-success" id="submit">Create Subscriber Record</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+            <form class="createSubscribersForm text-center">
+                <div class="form-group">
+                    <span class=""><h2>View Subscriber Details</h2></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="propCode" placeholder="Enter property code" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success" id="viewSubscribers">View Details</button>
+                    </div>
+                </div>
+            </form>
+            <table class="table table-hover" id="subscibersTable">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Property Code</th>
+                    <th scope="col">Name of Property</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">L.C.D.A</th>
+                    <th scope="col">Tariff</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('submit').addEventListener('click',createSubscriber);
+
+    function createSubscriber(e) {
+        e.preventDefault();
+
+        const details = {
+            "code": document.getElementById('code').value,
+            "name": document.getElementById("name").value,
+            "phone": document.getElementById('phone').value,
+            "address": document.getElementById('adderss').value,
+            "lcda": document.getElementById('lcda').value,
+            "tariff": document.getElementById('tariff').value
+        };
+
+        fetch('http://invoiceapitrusoftng.eu-west-1.elasticbeanstalk.com/api/v1/invoice/asset/', {
+            headers: {
+                'Content-type':'application/json'
+            },
+            method:'POST',
+            body:JSON.stringify( details )
+        })
+            .then(res => res.json())
+            .then(res =>  {
+                if(res.status === "success"){
+                    alert("Subscriber successfully added.");
+                } else{
+                    alert("Check the details you entered and try again.");
+                }
+            })
+            .catch(err => console.log('Error message:', err));
+    }
+
+
+
+    document.getElementById('viewSubscribers').addEventListener('click', viewSubscriber);
+
+    function viewSubscriber(e) {
+        e.preventDefault();
+
+        const code = document.getElementById('propCode').value;
+
+        const url = 'http://invoiceapitrusoftng.eu-west-1.elasticbeanstalk.com/api/v1/invoice/asset/' + code;
+
+        // myUrl = updateUrl(url, code, '');
+
+        fetch(url, {
+            headers: {
+                'Content-type':'application/json'
+            },
+        })
+            .then(res => res.json())
+            .then(res =>  {
+                if(res.status === "success"){
+                    alert("Subscriber's detail exists.");
+                    } else{
+                    alert("Check the details you entered and try again.");
+                }
+            })
+            .catch(err => console.log('Error message:', err));
+    }
+</script>
+
+<div id="footer">
+    <div class="container">
+        <h6 class="display-5 text-center">&copy; Copyright 2019 - Dotee Transact</h6>
+    </div>
+</div>
+
+
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/75708661cf.js" crossorigin="anonymous"></script>
+</body>
+</html>
